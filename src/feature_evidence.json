@@ -1,0 +1,168 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-create-a-multi-page-frontend-for-a-physical-fitness-physical-coach-website-with-top-navigation-and-routes-for-home-tools-contact-us-and-at-least-one-additional-informational-page-e-g-about-or-services-all-pages-must-be-accessible-via-navigation-and-have-clear-page-headings-and-sections",
+      "featureTitle": "Create a multi-page frontend for a physical fitness / physical coach website with top navigation and routes for: Home, Tools, Contact Us, and at least one additional informational page (e.g., About or Services). All pages must be accessible via navigation and have clear page headings and sections.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/main.tsx",
+        "frontend/src/pages/About.tsx",
+        "frontend/src/pages/Contact.tsx",
+        "frontend/src/pages/Home.tsx",
+        "frontend/src/pages/Tools.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-1"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-design-and-implement-a-coherent-visual-theme-for-the-full-website-colors-typography-spacing-buttons-cards-appropriate-for-a-fitness-coaching-brand-and-apply-it-consistently-across-all-pages-avoid-a-blue-purple-primary-palette-unless-explicitly-requested-later",
+      "featureTitle": "Design and implement a coherent visual theme for the full website (colors, typography, spacing, buttons, cards) appropriate for a fitness coaching brand, and apply it consistently across all pages. Avoid a blue/purple primary palette unless explicitly requested later.",
+      "files": [
+        "frontend/src/components/SiteLayout.tsx",
+        "frontend/src/index.css",
+        "frontend/tailwind.config.js"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-2"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-the-home-page-content-sections-suitable-for-a-fitness-coach-website-including-at-minimum-hero-section-headline-subtext-primary-call-to-action-coach-services-overview-highlights-benefits-section-and-a-call-to-action-linking-to-tools-and-contact-us",
+      "featureTitle": "Implement the Home page content sections suitable for a fitness coach website, including at minimum: hero section (headline + subtext + primary call-to-action), coach/services overview, highlights/benefits section, and a call-to-action linking to Tools and Contact Us.",
+      "files": [
+        "frontend/src/pages/Home.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-3"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-a-tools-page-that-provides-practical-fitness-tools-implemented-in-the-ui-no-external-integrations-required-include-at-least-bmi-calculator-height-weight-inputs-with-unit-selection-daily-calorie-estimate-calculator-basic-bmr-tdee-estimate-with-activity-level-and-a-simple-weekly-workout-planner-template-user-fills-days-exercises-and-can-export-copy",
+      "featureTitle": "Build a Tools page that provides practical fitness tools implemented in the UI (no external integrations required). Include at least: BMI calculator (height/weight inputs with unit selection), daily calorie estimate calculator (basic BMR/TDEE estimate with activity level), and a simple weekly workout planner template (user fills days/exercises and can export/copy).",
+      "files": [
+        "frontend/src/lib/clipboard.ts",
+        "frontend/src/lib/fitnessCalculators.ts",
+        "frontend/src/pages/Tools.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-4"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-a-contact-us-page-with-a-contact-form-name-email-message-including-client-side-validation-success-error-states-and-submission-to-the-backend-for-storage-also-display-basic-contact-information-blocks-e-g-email-phone-placeholders-and-optional-business-hours",
+      "featureTitle": "Create a Contact Us page with a contact form (name, email, message) including client-side validation, success/error states, and submission to the backend for storage. Also display basic contact information blocks (e.g., email/phone placeholders) and optional business hours.",
+      "files": [
+        "frontend/src/lib/contactValidation.ts",
+        "frontend/src/pages/Contact.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-5"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-a-basic-footer-and-standard-site-layout-elements-header-nav-footer-reused-across-pages-including-links-to-home-tools-contact-us-and-the-additional-informational-page",
+      "featureTitle": "Add a basic footer and standard site layout elements (header/nav + footer) reused across pages, including links to Home, Tools, Contact Us, and the additional informational page.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/Footer.tsx",
+        "frontend/src/components/HeaderNav.tsx",
+        "frontend/src/components/SiteLayout.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-7"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-a-lightweight-on-site-seo-accessibility-baseline-set-meaningful-page-titles-per-route-ensure-form-inputs-have-labels-and-ensure-main-sections-use-semantic-headings",
+      "featureTitle": "Add a lightweight on-site SEO/accessibility baseline: set meaningful page titles per route, ensure form inputs have labels, and ensure main sections use semantic headings.",
+      "files": [
+        "frontend/src/lib/useDocumentTitle.ts",
+        "frontend/src/pages/About.tsx",
+        "frontend/src/pages/Contact.tsx",
+        "frontend/src/pages/Home.tsx",
+        "frontend/src/pages/Tools.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-8"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-generated-static-image-assets-to-support-the-fitness-coach-theme-and-render-them-in-the-ui-served-from-frontend-public-assets-generated-including-a-logo-and-a-home-hero-banner-image",
+      "featureTitle": "Add generated static image assets to support the fitness coach theme and render them in the UI (served from frontend/public/assets/generated), including a logo and a home hero banner image.",
+      "files": [
+        "frontend/src/components/Footer.tsx",
+        "frontend/src/components/HeaderNav.tsx",
+        "frontend/src/pages/Home.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-9"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

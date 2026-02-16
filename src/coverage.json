@@ -1,0 +1,270 @@
+{
+  "kind": "coverage_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-13T03:41:40.070Z",
+  "sources": {
+    "buildRequest": true,
+    "implementationPlan": true
+  },
+  "requirements": {
+    "total": 9,
+    "implemented": 8,
+    "items": [
+      {
+        "id": "REQ-1",
+        "summary": "Create a multi-page frontend for a physical fitness / physical coach website with top navigation and routes for: Home, Tools, Contact Us, and at least one additional informational page (e.g., About or Services). All pages must be accessible via navigation and have clear page headings and sections.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/App.tsx",
+          "frontend/src/routes.tsx",
+          "frontend/src/pages/Home.tsx",
+          "frontend/src/pages/Tools.tsx",
+          "frontend/src/pages/Contact.tsx",
+          "frontend/src/pages/About.tsx",
+          "frontend/src/main.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/App.tsx",
+          "frontend/src/pages/Home.tsx",
+          "frontend/src/pages/Tools.tsx",
+          "frontend/src/pages/Contact.tsx",
+          "frontend/src/pages/About.tsx",
+          "frontend/src/main.tsx"
+        ]
+      },
+      {
+        "id": "REQ-2",
+        "summary": "Design and implement a coherent visual theme for the full website (colors, typography, spacing, buttons, cards) appropriate for a fitness coaching brand, and apply it consistently across all pages. Avoid a blue/purple primary palette unless explicitly requested later.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/index.css",
+          "frontend/tailwind.config.js",
+          "frontend/src/components/SiteLayout.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/index.css",
+          "frontend/tailwind.config.js",
+          "frontend/src/components/SiteLayout.tsx"
+        ]
+      },
+      {
+        "id": "REQ-3",
+        "summary": "Implement the Home page content sections suitable for a fitness coach website, including at minimum: hero section (headline + subtext + primary call-to-action), coach/services overview, highlights/benefits section, and a call-to-action linking to Tools and Contact Us.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/pages/Home.tsx",
+          "frontend/src/routes.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/Home.tsx"
+        ]
+      },
+      {
+        "id": "REQ-4",
+        "summary": "Build a Tools page that provides practical fitness tools implemented in the UI (no external integrations required). Include at least: BMI calculator (height/weight inputs with unit selection), daily calorie estimate calculator (basic BMR/TDEE estimate with activity level), and a simple weekly workout planner template (user fills days/exercises and can export/copy).",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/pages/Tools.tsx",
+          "frontend/src/lib/fitnessCalculators.ts",
+          "frontend/src/lib/clipboard.ts"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/Tools.tsx",
+          "frontend/src/lib/fitnessCalculators.ts",
+          "frontend/src/lib/clipboard.ts"
+        ]
+      },
+      {
+        "id": "REQ-5",
+        "summary": "Create a Contact Us page with a contact form (name, email, message) including client-side validation, success/error states, and submission to the backend for storage. Also display basic contact information blocks (e.g., email/phone placeholders) and optional business hours.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/pages/Contact.tsx",
+          "frontend/src/lib/contactValidation.ts",
+          "frontend/src/lib/backendClient.ts"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/Contact.tsx",
+          "frontend/src/lib/contactValidation.ts"
+        ]
+      },
+      {
+        "id": "REQ-6",
+        "summary": "Backend: implement data models and actor methods to store and retrieve Contact Us submissions. Each stored inquiry must include: id, name, email, message, and createdAt timestamp.",
+        "status": "unknown",
+        "plannedFiles": [],
+        "matchedFiles": []
+      },
+      {
+        "id": "REQ-7",
+        "summary": "Add a basic footer and standard site layout elements (header/nav + footer) reused across pages, including links to Home, Tools, Contact Us, and the additional informational page.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/HeaderNav.tsx",
+          "frontend/src/components/Footer.tsx",
+          "frontend/src/components/SiteLayout.tsx",
+          "frontend/src/App.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/HeaderNav.tsx",
+          "frontend/src/components/Footer.tsx",
+          "frontend/src/components/SiteLayout.tsx",
+          "frontend/src/App.tsx"
+        ]
+      },
+      {
+        "id": "REQ-8",
+        "summary": "Add a lightweight on-site SEO/accessibility baseline: set meaningful page titles per route, ensure form inputs have labels, and ensure main sections use semantic headings.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/lib/useDocumentTitle.ts",
+          "frontend/src/pages/Home.tsx",
+          "frontend/src/pages/Tools.tsx",
+          "frontend/src/pages/Contact.tsx",
+          "frontend/src/pages/About.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/lib/useDocumentTitle.ts",
+          "frontend/src/pages/Home.tsx",
+          "frontend/src/pages/Tools.tsx",
+          "frontend/src/pages/Contact.tsx",
+          "frontend/src/pages/About.tsx"
+        ]
+      },
+      {
+        "id": "REQ-9",
+        "summary": "Add generated static image assets to support the fitness coach theme and render them in the UI (served from frontend/public/assets/generated), including a logo and a home hero banner image.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/public/assets/generated/coach-logo.dim_512x512.png",
+          "frontend/public/assets/generated/fitness-hero-banner.dim_1600x900.png",
+          "frontend/public/assets/generated/fitness-icons-set.dim_512x512.png",
+          "frontend/src/components/HeaderNav.tsx",
+          "frontend/src/components/Footer.tsx",
+          "frontend/src/pages/Home.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/public/assets/generated/coach-logo.dim_512x512.png",
+          "frontend/public/assets/generated/fitness-hero-banner.dim_1600x900.png",
+          "frontend/public/assets/generated/fitness-icons-set.dim_512x512.png",
+          "frontend/src/components/HeaderNav.tsx",
+          "frontend/src/components/Footer.tsx",
+          "frontend/src/pages/Home.tsx"
+        ]
+      }
+    ]
+  },
+  "changedFiles": [
+    "backend/main.mo",
+    "build-request.json",
+    "build-template/Dockerfile",
+    "build-template/LICENSE",
+    "build-template/README.md",
+    "build-template/deploy.sh",
+    "build-template/icp.yaml",
+    "build-template/package.json",
+    "build-template/pnpm-lock.yaml",
+    "build-template/pnpm-workspace.yaml",
+    "build-template/scripts/prune-unused-images.js",
+    "build-template/scripts/resize-images.js",
+    "build-template/src/backend/canister.yaml",
+    "build-template/src/backend/system-idl/aaaaa-aa.did",
+    "build-template/src/frontend/canister.yaml",
+    "build-template/src/frontend/components.json",
+    "build-template/src/frontend/env.json",
+    "build-template/src/frontend/eslint-rules/no-bigint-in-query-keys.js",
+    "build-template/src/frontend/eslint-rules/require-internet-identity-provider.js",
+    "build-template/src/frontend/eslint.config.js",
+    "build-template/src/frontend/package.json",
+    "build-template/src/frontend/postcss.config.js",
+    "build-template/src/frontend/src/components/ui/accordion.tsx",
+    "build-template/src/frontend/src/components/ui/alert-dialog.tsx",
+    "build-template/src/frontend/src/components/ui/alert.tsx",
+    "build-template/src/frontend/src/components/ui/aspect-ratio.tsx",
+    "build-template/src/frontend/src/components/ui/avatar.tsx",
+    "build-template/src/frontend/src/components/ui/badge.tsx",
+    "build-template/src/frontend/src/components/ui/breadcrumb.tsx",
+    "build-template/src/frontend/src/components/ui/button.tsx",
+    "build-template/src/frontend/src/components/ui/calendar.tsx",
+    "build-template/src/frontend/src/components/ui/card.tsx",
+    "build-template/src/frontend/src/components/ui/carousel.tsx",
+    "build-template/src/frontend/src/components/ui/chart.tsx",
+    "build-template/src/frontend/src/components/ui/checkbox.tsx",
+    "build-template/src/frontend/src/components/ui/collapsible.tsx",
+    "build-template/src/frontend/src/components/ui/command.tsx",
+    "build-template/src/frontend/src/components/ui/context-menu.tsx",
+    "build-template/src/frontend/src/components/ui/dialog.tsx",
+    "build-template/src/frontend/src/components/ui/drawer.tsx",
+    "build-template/src/frontend/src/components/ui/dropdown-menu.tsx",
+    "build-template/src/frontend/src/components/ui/form.tsx",
+    "build-template/src/frontend/src/components/ui/hover-card.tsx",
+    "build-template/src/frontend/src/components/ui/input-otp.tsx",
+    "build-template/src/frontend/src/components/ui/input.tsx",
+    "build-template/src/frontend/src/components/ui/label.tsx",
+    "build-template/src/frontend/src/components/ui/menubar.tsx",
+    "build-template/src/frontend/src/components/ui/navigation-menu.tsx",
+    "build-template/src/frontend/src/components/ui/pagination.tsx",
+    "build-template/src/frontend/src/components/ui/popover.tsx",
+    "build-template/src/frontend/src/components/ui/progress.tsx",
+    "build-template/src/frontend/src/components/ui/radio-group.tsx",
+    "build-template/src/frontend/src/components/ui/resizable.tsx",
+    "build-template/src/frontend/src/components/ui/scroll-area.tsx",
+    "build-template/src/frontend/src/components/ui/select.tsx",
+    "build-template/src/frontend/src/components/ui/separator.tsx",
+    "build-template/src/frontend/src/components/ui/sheet.tsx",
+    "build-template/src/frontend/src/components/ui/sidebar.tsx",
+    "build-template/src/frontend/src/components/ui/skeleton.tsx",
+    "build-template/src/frontend/src/components/ui/slider.tsx",
+    "build-template/src/frontend/src/components/ui/sonner.tsx",
+    "build-template/src/frontend/src/components/ui/switch.tsx",
+    "build-template/src/frontend/src/components/ui/table.tsx",
+    "build-template/src/frontend/src/components/ui/tabs.tsx",
+    "build-template/src/frontend/src/components/ui/textarea.tsx",
+    "build-template/src/frontend/src/components/ui/toggle-group.tsx",
+    "build-template/src/frontend/src/components/ui/toggle.tsx",
+    "build-template/src/frontend/src/components/ui/tooltip.tsx",
+    "build-template/src/frontend/src/hooks/use-mobile.tsx",
+    "build-template/src/frontend/src/lib/utils.ts",
+    "build-template/src/frontend/tsconfig.json",
+    "build-template/src/frontend/vite.config.js",
+    "build-template/tsconfig.json",
+    "caffeine.lock.json",
+    "feature_evidence.json",
+    "frontend-file-summaries.txt",
+    "frontend-implementation-plan.json",
+    "frontend/index.css",
+    "frontend/index.html",
+    "frontend/public/assets/generated/coach-logo.dim_512x512.png",
+    "frontend/public/assets/generated/fitness-hero-banner.dim_1600x900.png",
+    "frontend/public/assets/generated/fitness-icons-set.dim_512x512.png",
+    "frontend/src/App.tsx",
+    "frontend/src/backend.d.ts",
+    "frontend/src/backend.ts",
+    "frontend/src/components/Footer.tsx",
+    "frontend/src/components/HeaderNav.tsx",
+    "frontend/src/components/SiteLayout.tsx",
+    "frontend/src/config.ts",
+    "frontend/src/declarations/backend.did.d.ts",
+    "frontend/src/declarations/backend.did.js",
+    "frontend/src/hooks/useActor.ts",
+    "frontend/src/hooks/useInternetIdentity.ts",
+    "frontend/src/hooks/useQueries.ts",
+    "frontend/src/index.css",
+    "frontend/src/lib/clipboard.ts",
+    "frontend/src/lib/contactValidation.ts",
+    "frontend/src/lib/fitnessCalculators.ts",
+    "frontend/src/lib/useDocumentTitle.ts",
+    "frontend/src/main.tsx",
+    "frontend/src/pages/About.tsx",
+    "frontend/src/pages/Contact.tsx",
+    "frontend/src/pages/Home.tsx",
+    "frontend/src/pages/Tools.tsx",
+    "frontend/src/ui-summary.json",
+    "frontend/src/utils/StorageClient.ts",
+    "frontend/tailwind.config.js",
+    "project_state.json",
+    "scratch/component-selection.json",
+    "spec.md",
+    "spec_vs_diff_report.json"
+  ]
+}

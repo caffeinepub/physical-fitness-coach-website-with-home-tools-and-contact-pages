@@ -1,0 +1,200 @@
+{
+  "kind": "build_request",
+  "title": "Physical Fitness / Coach Website with Home, Tools, and Contact Pages",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Create a multi-page frontend for a physical fitness / physical coach website with top navigation and routes for: Home, Tools, Contact Us, and at least one additional informational page (e.g., About or Services). All pages must be accessible via navigation and have clear page headings and sections.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Create me a web page that has its necessary tools. A physical fitness/physical coach website. Provide its tools, home page, contact us, and etc."
+        ]
+      },
+      "acceptanceCriteria": [
+        "Navigation is visible site-wide and includes links to Home, Tools, Contact Us, and one additional page.",
+        "Each route renders without errors and shows a clear title/header for the page.",
+        "The site is usable on mobile and desktop screen sizes (responsive layout)."
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Design and implement a coherent visual theme for the full website (colors, typography, spacing, buttons, cards) appropriate for a fitness coaching brand, and apply it consistently across all pages. Avoid a blue/purple primary palette unless explicitly requested later.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "A physical fitness/physical coach website."
+        ]
+      },
+      "acceptanceCriteria": [
+        "All pages share a consistent header/nav, typography scale, button styles, and card/section styling.",
+        "Primary brand color is not blue/purple (unless later requested).",
+        "Contrast and readability are acceptable for typical body text and buttons."
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Implement the Home page content sections suitable for a fitness coach website, including at minimum: hero section (headline + subtext + primary call-to-action), coach/services overview, highlights/benefits section, and a call-to-action linking to Tools and Contact Us.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Provide its tools, home page, contact us, and etc."
+        ]
+      },
+      "acceptanceCriteria": [
+        "Home page contains hero + overview + highlights + CTA sections.",
+        "Primary call-to-action navigates to Contact Us or Tools.",
+        "All content is in English and uses fitness-coaching appropriate copy."
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Build a Tools page that provides practical fitness tools implemented in the UI (no external integrations required). Include at least: BMI calculator (height/weight inputs with unit selection), daily calorie estimate calculator (basic BMR/TDEE estimate with activity level), and a simple weekly workout planner template (user fills days/exercises and can export/copy).",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Create me a web page that has its necessary tools."
+        ]
+      },
+      "acceptanceCriteria": [
+        "BMI calculator accepts inputs, validates them, and displays BMI value with a basic category label (e.g., underweight/normal/overweight/obese).",
+        "Calorie estimate calculator accepts inputs (sex, age, height, weight, activity level), validates them, and displays an estimated daily calorie number.",
+        "Workout planner allows users to fill/edit a 7-day plan and provides a way to copy/export the plan text (e.g., copy-to-clipboard)."
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "text": "Create a Contact Us page with a contact form (name, email, message) including client-side validation, success/error states, and submission to the backend for storage. Also display basic contact information blocks (e.g., email/phone placeholders) and optional business hours.",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Provide its tools, home page, contact us, and etc."
+        ]
+      },
+      "acceptanceCriteria": [
+        "Contact form validates required fields and email format before submission.",
+        "On successful submission, the user sees a confirmation message and the form resets or disables appropriately.",
+        "On failure, an error message is displayed without crashing the page.",
+        "Submitted inquiries are persisted in the backend and can be retrieved via a backend method (for verification/testing)."
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "text": "Backend: implement data models and actor methods to store and retrieve Contact Us submissions. Each stored inquiry must include: id, name, email, message, and createdAt timestamp.",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "contact us"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Backend exposes a method to create a new contact inquiry and returns the created id (or created record).",
+        "Backend exposes a method to list stored inquiries (suitable for testing; can be public for now).",
+        "Records include createdAt timestamps set by the backend at write time."
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "text": "Add a basic footer and standard site layout elements (header/nav + footer) reused across pages, including links to Home, Tools, Contact Us, and the additional informational page.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Provide its tools, home page, contact us, and etc."
+        ]
+      },
+      "acceptanceCriteria": [
+        "Footer appears on all routes and contains consistent navigation links.",
+        "Layout maintains consistent spacing and max-width rules across pages."
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "text": "Add a lightweight on-site SEO/accessibility baseline: set meaningful page titles per route, ensure form inputs have labels, and ensure main sections use semantic headings.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Create me a web page..."
+        ]
+      },
+      "acceptanceCriteria": [
+        "Each page sets an appropriate document title (e.g., 'Home | [Site Name]', 'Tools | [Site Name]').",
+        "Contact form inputs have associated labels and show validation messages in text.",
+        "Pages use a sensible heading structure (one H1 per page; sections use H2/H3 as appropriate)."
+      ]
+    },
+    {
+      "id": "REQ-9",
+      "text": "Add generated static image assets to support the fitness coach theme and render them in the UI (served from frontend/public/assets/generated), including a logo and a home hero banner image.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "A physical fitness/physical coach website."
+        ]
+      },
+      "acceptanceCriteria": [
+        "Generated images exist under frontend/public/assets/generated and are referenced by the Home page and site header/footer as appropriate.",
+        "Images render correctly in the built app without fetching from the backend."
+      ]
+    }
+  ],
+  "constraints": [
+    "Backend must remain a single Motoko actor (no additional backend services).",
+    "Do not modify any files under frontend/src/components/ui or other immutable paths listed in SYSTEM_CONTEXT; compose them instead.",
+    "Do not add third-party authentication providers; Internet Identity is the only supported auth (not required for this request)."
+  ],
+  "nonGoals": [
+    "Payments, subscriptions, or checkout flows.",
+    "Real-time chat or messaging.",
+    "Integration with external fitness APIs, wearables, or calendars.",
+    "Personalized AI coaching or LLM-based features.",
+    "Admin dashboard for managing inquiries (beyond a simple backend list method for verification)."
+  ],
+  "imageRequirements": {
+    "required": [
+      "Fitness coaching logo mark, modern minimalist (coach-logo.dim_512x512.png)",
+      "High-energy fitness hero banner with abstract shapes and subtle texture, no text (fitness-hero-banner.dim_1600x900.png)",
+      "Set of 3 simple line icons: dumbbell, stopwatch, heart/health (fitness-icons-set.dim_512x512.png)"
+    ],
+    "edits": []
+  },
+  "userProfileUpdate": {
+    "goalsToAdd": [],
+    "goalsToRemove": [],
+    "preferencesToAdd": [
+      "User-facing text must be in English."
+    ],
+    "preferencesToRemove": [],
+    "miscToAdd": [],
+    "miscToRemove": [],
+    "fieldsToSet": {},
+    "fieldsToDelete": []
+  }
+}

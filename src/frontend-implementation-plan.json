@@ -1,0 +1,259 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Physical Fitness / Coach Website Frontend (Home, Tools, Contact, About) + Theme, Layout, SEO, Images",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "summary": "Implement multi-page site with top navigation and routes for Home, Tools, Contact Us, and an additional informational page, with clear headings/sections and responsive layout.",
+      "acceptanceCriteria": [
+        "Navigation is visible site-wide and includes links to Home, Tools, Contact Us, and one additional page.",
+        "Each route renders without errors and shows a clear title/header for the page.",
+        "The site is usable on mobile and desktop screen sizes (responsive layout)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "create",
+          "description": "Create the app shell that wires routing, the shared layout (header/footer), and renders all required pages (Home, Tools, Contact Us, About/Services). Use the build-template-react setup and compose (do not modify) shadcn-ui components where helpful for navigation elements. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/routes.tsx",
+          "operation": "create",
+          "description": "Define the route configuration for Home, Tools, Contact Us, and the additional informational page, ensuring each is reachable via navigation and has a clear page heading section."
+        },
+        {
+          "path": "frontend/src/pages/Home.tsx",
+          "operation": "create",
+          "description": "Create the Home page route component with a clear H1 and section structure, designed responsively using Tailwind utilities and composed shadcn-ui layout primitives where appropriate. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/pages/Tools.tsx",
+          "operation": "create",
+          "description": "Create the Tools page route component with a clear H1 and section structure and placeholders for the required tools (BMI, calorie estimate, weekly planner), responsive on mobile/desktop."
+        },
+        {
+          "path": "frontend/src/pages/Contact.tsx",
+          "operation": "create",
+          "description": "Create the Contact Us page route component with a clear H1 and sections for a contact form and contact info blocks, responsive layout."
+        },
+        {
+          "path": "frontend/src/pages/About.tsx",
+          "operation": "create",
+          "description": "Create an additional informational page (About or Services) with a clear H1 and structured sections describing the coach/services, ensuring it is linked from the site-wide navigation."
+        },
+        {
+          "path": "frontend/src/main.tsx",
+          "operation": "modify",
+          "description": "Ensure the React entry renders the new App routing/layout correctly (and fix imports if current './App' resolution is missing/mismatched), keeping the existing providers intact."
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Create and apply a coherent fitness-coach visual theme (colors, typography, spacing, buttons, cards) across all pages, avoiding a blue/purple primary palette.",
+      "acceptanceCriteria": [
+        "All pages share a consistent header/nav, typography scale, button styles, and card/section styling.",
+        "Primary brand color is not blue/purple (unless later requested).",
+        "Contrast and readability are acceptable for typical body text and buttons."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/index.css",
+          "operation": "create",
+          "description": "Add global styling and Tailwind layer customizations for a consistent fitness brand theme (non-blue/purple primary), typography scale, spacing, and reusable section/card/button patterns."
+        },
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Adjust Tailwind theme tokens (colors, font family, border radius, etc.) to match the fitness coaching brand look while avoiding blue/purple as the primary palette."
+        },
+        {
+          "path": "frontend/src/components/SiteLayout.tsx",
+          "operation": "create",
+          "description": "Implement a shared layout wrapper that standardizes max-width, spacing, and section padding across pages; compose shadcn-ui components for consistent surface/card/button styles where appropriate. Verify the component's usage instructions before implementing."
+        }
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "summary": "Build Home page sections: hero (headline/subtext/primary CTA), coach/services overview, highlights/benefits, and CTA linking to Tools and Contact Us.",
+      "acceptanceCriteria": [
+        "Home page contains hero + overview + highlights + CTA sections.",
+        "Primary call-to-action navigates to Contact Us or Tools.",
+        "All content is in English and uses fitness-coaching appropriate copy."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/Home.tsx",
+          "operation": "modify",
+          "description": "Implement the required Home sections (hero, overview, highlights/benefits, CTA) with English fitness-coaching copy; include a primary CTA that navigates to Tools or Contact Us; compose shadcn-ui Button/Card components for consistent presentation. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/routes.tsx",
+          "operation": "modify",
+          "description": "Ensure the Home route is registered and that CTAs can navigate to Tools and Contact Us routes."
+        }
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "summary": "Implement Tools page UI tools: BMI calculator with units, daily calorie estimate calculator (BMR/TDEE) with activity level, and a 7-day workout planner with copy/export.",
+      "acceptanceCriteria": [
+        "BMI calculator accepts inputs, validates them, and displays BMI value with a basic category label (e.g., underweight/normal/overweight/obese).",
+        "Calorie estimate calculator accepts inputs (sex, age, height, weight, activity level), validates them, and displays an estimated daily calorie number.",
+        "Workout planner allows users to fill/edit a 7-day plan and provides a way to copy/export the plan text (e.g., copy-to-clipboard)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/Tools.tsx",
+          "operation": "modify",
+          "description": "Implement BMI calculator (unit selection + validation + BMI + category), calorie estimate calculator (sex/age/height/weight/activity + validation + daily calories), and weekly workout planner (editable 7-day table/template + copy-to-clipboard export). Compose shadcn-ui Form/Input/Select/Button/Card components for consistent UI. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/lib/fitnessCalculators.ts",
+          "operation": "create",
+          "description": "Add pure utility functions for BMI computation, BMI category labeling, and a basic BMR/TDEE estimate with activity multipliers, to keep page UI code clean and testable."
+        },
+        {
+          "path": "frontend/src/lib/clipboard.ts",
+          "operation": "create",
+          "description": "Add a small helper to copy exported workout-plan text to the clipboard and return success/failure state for UI messaging."
+        }
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "summary": "Create Contact Us page with validated contact form (name/email/message), success/error states, and submission to backend for storage; include contact info blocks and optional hours.",
+      "acceptanceCriteria": [
+        "Contact form validates required fields and email format before submission.",
+        "On successful submission, the user sees a confirmation message and the form resets or disables appropriately.",
+        "On failure, an error message is displayed without crashing the page.",
+        "Submitted inquiries are persisted in the backend and can be retrieved via a backend method (for verification/testing)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/Contact.tsx",
+          "operation": "modify",
+          "description": "Implement the Contact Us form (name, email, message) with client-side validation, inline text validation messages, and success/error submission states; render contact info blocks (email/phone placeholders) and optional business hours. Compose shadcn-ui form controls and alert/toast patterns (without modifying immutable ui components). Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/lib/contactValidation.ts",
+          "operation": "create",
+          "description": "Add client-side validation helpers (required fields, email format) used by the Contact form to show clear text errors and prevent invalid submission."
+        },
+        {
+          "path": "frontend/src/lib/backendClient.ts",
+          "operation": "create",
+          "description": "Create a frontend helper that uses the existing core-infrastructure connectivity to call the backend capability for submitting inquiries (use backendInterface.submitInquiry) and handles error normalization for UI display. Verify the component's usage instructions before implementing."
+        }
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "summary": "Add a reusable site layout with header/nav and a footer that includes links to all required pages.",
+      "acceptanceCriteria": [
+        "Footer appears on all routes and contains consistent navigation links.",
+        "Layout maintains consistent spacing and max-width rules across pages."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/HeaderNav.tsx",
+          "operation": "create",
+          "description": "Create a site-wide header with top navigation links to Home, Tools, Contact Us, and About/Services; compose shadcn-ui Button/Navigation patterns as appropriate without modifying immutable ui components. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/Footer.tsx",
+          "operation": "create",
+          "description": "Create a site-wide footer with consistent navigation links to Home, Tools, Contact Us, and About/Services, plus basic brand/contact placeholders; compose shadcn-ui typography/link styling where appropriate. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/SiteLayout.tsx",
+          "operation": "modify",
+          "description": "Wire HeaderNav and Footer into the shared layout so they render on every route and enforce consistent max-width and spacing."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Ensure all routes render within the shared SiteLayout so the header/nav and footer appear on every page."
+        }
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "summary": "Add SEO/accessibility baseline: per-route document titles, labeled form inputs, and semantic headings.",
+      "acceptanceCriteria": [
+        "Each page sets an appropriate document title (e.g., 'Home | [Site Name]', 'Tools | [Site Name]').",
+        "Contact form inputs have associated labels and show validation messages in text.",
+        "Pages use a sensible heading structure (one H1 per page; sections use H2/H3 as appropriate)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/lib/useDocumentTitle.ts",
+          "operation": "create",
+          "description": "Add a small React hook to set document.title per route in a consistent pattern (e.g., 'Home | FitCoach')."
+        },
+        {
+          "path": "frontend/src/pages/Home.tsx",
+          "operation": "modify",
+          "description": "Set an appropriate document title using the shared hook and ensure semantic headings (single H1 + H2/H3 for sections)."
+        },
+        {
+          "path": "frontend/src/pages/Tools.tsx",
+          "operation": "modify",
+          "description": "Set an appropriate document title using the shared hook and ensure semantic headings (single H1 + H2/H3 for each tool section)."
+        },
+        {
+          "path": "frontend/src/pages/Contact.tsx",
+          "operation": "modify",
+          "description": "Set an appropriate document title using the shared hook; ensure all form controls have associated labels and validation errors render as text near the relevant inputs."
+        },
+        {
+          "path": "frontend/src/pages/About.tsx",
+          "operation": "modify",
+          "description": "Set an appropriate document title using the shared hook and ensure semantic headings for informational sections."
+        }
+      ]
+    },
+    {
+      "id": "REQ-9",
+      "summary": "Add generated static images (logo, home hero banner, icons) under frontend/public/assets/generated and render them in the UI.",
+      "acceptanceCriteria": [
+        "Generated images exist under frontend/public/assets/generated and are referenced by the Home page and site header/footer as appropriate.",
+        "Images render correctly in the built app without fetching from the backend."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/public/assets/generated/coach-logo.dim_512x512.png",
+          "operation": "create",
+          "description": "Add the generated static logo asset at frontend/public/assets/generated/coach-logo.dim_512x512.png for use in the site header/footer branding."
+        },
+        {
+          "path": "frontend/public/assets/generated/fitness-hero-banner.dim_1600x900.png",
+          "operation": "create",
+          "description": "Add the generated static hero banner asset at frontend/public/assets/generated/fitness-hero-banner.dim_1600x900.png for use on the Home hero section."
+        },
+        {
+          "path": "frontend/public/assets/generated/fitness-icons-set.dim_512x512.png",
+          "operation": "create",
+          "description": "Add the generated static icon set at frontend/public/assets/generated/fitness-icons-set.dim_512x512.png for use in highlights/benefits and/or Tools sections."
+        },
+        {
+          "path": "frontend/src/components/HeaderNav.tsx",
+          "operation": "modify",
+          "description": "Render the logo image from frontend/public/assets/generated/coach-logo.dim_512x512.png in the header alongside the brand name, with accessible alt text."
+        },
+        {
+          "path": "frontend/src/components/Footer.tsx",
+          "operation": "modify",
+          "description": "Optionally re-use the logo image from frontend/public/assets/generated/coach-logo.dim_512x512.png in the footer branding area, ensuring it is served as a static asset."
+        },
+        {
+          "path": "frontend/src/pages/Home.tsx",
+          "operation": "modify",
+          "description": "Render the hero banner image from frontend/public/assets/generated/fitness-hero-banner.dim_1600x900.png in the Home hero section and use frontend/public/assets/generated/fitness-icons-set.dim_512x512.png to support highlights/benefits visuals."
+        }
+      ]
+    }
+  ]
+}

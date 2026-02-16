@@ -1,0 +1,88 @@
+{
+  "kind": "spec_vs_diff_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-13T03:41:40.068Z",
+  "summary": "Diff implements a multi-page FitCoach frontend (Home/Tools/About/Contact) with shared header/footer layout, responsive styling/theme, tools (BMI/TDEE/workout planner with copy), document titles, and a Motoko backend for storing/listing contact inquiries. However, backend inquiry creation does not return an id/record as required, and generated static image assets under frontend/public/assets/generated (including required icon set) cannot be verified from the provided diff summary.",
+  "missing_requirements": [
+    {
+      "id": "REQ-6",
+      "requirement": "Backend method to create a new contact inquiry must return the created id (or created record).",
+      "reason": "backend/main.mo implements submitInquiry(...) : async () and does not return an id or record.",
+      "evidence": [
+        "backend/main.mo"
+      ]
+    },
+    {
+      "id": "REQ-9",
+      "requirement": "Add generated static image assets under frontend/public/assets/generated (logo, hero banner, and referenced theme images).",
+      "reason": "UI references generated image paths, but the diff summary does not show any added files under frontend/public/assets/generated, so asset existence cannot be confirmed from provided evidence.",
+      "evidence": [
+        "frontend/src/components/HeaderNav.tsx",
+        "frontend/src/components/Footer.tsx",
+        "frontend/src/pages/Home.tsx"
+      ]
+    },
+    {
+      "id": "REQ-9",
+      "requirement": "Include and render the required generated icon set (dumbbell, stopwatch, heart/health) from frontend/public/assets/generated.",
+      "reason": "No evidence in the shown files that the required icon set file exists or is rendered; only logo and hero banner are referenced in UI. (Assets may be in omitted files, but not verifiable from provided summary.)",
+      "evidence": [
+        "frontend/src/pages/Home.tsx",
+        "frontend/src/components/HeaderNav.tsx",
+        "frontend/src/components/Footer.tsx"
+      ]
+    }
+  ],
+  "hallucinated_features": [
+    {
+      "description": "Footer includes a third-party attribution link to caffeine.ai with UTM parameters.",
+      "reason": "BuildRequest did not request external attribution/marketing links in the footer.",
+      "evidence": [
+        "frontend/src/components/Footer.tsx"
+      ]
+    },
+    {
+      "description": "Backend exposes an additional getInquiry(id) query method.",
+      "reason": "BuildRequest only required create and list methods for inquiries; single-record fetch was not requested.",
+      "evidence": [
+        "backend/main.mo"
+      ]
+    },
+    {
+      "description": "Added Internet Identity authentication/provider and identity-aware actor creation even though authentication was not required for this request.",
+      "reason": "BuildRequest states Internet Identity is the only supported auth but also notes it is not required for this request; implementing it is extra beyond requirements.",
+      "evidence": [
+        "frontend/src/hooks/useInternetIdentity.ts",
+        "frontend/src/hooks/useActor.ts",
+        "frontend/src/main.tsx"
+      ]
+    }
+  ],
+  "confidence": 0.74,
+  "changed_files": [
+    "all_files_summary.json",
+    "backend/main.mo",
+    "frontend-file-summaries.txt",
+    "frontend/index.css",
+    "frontend/index.html",
+    "frontend/src/App.tsx",
+    "frontend/src/components/Footer.tsx",
+    "frontend/src/components/HeaderNav.tsx",
+    "frontend/src/components/SiteLayout.tsx",
+    "frontend/src/hooks/useActor.ts",
+    "frontend/src/hooks/useInternetIdentity.ts",
+    "frontend/src/hooks/useQueries.ts",
+    "frontend/src/index.css",
+    "frontend/src/lib/clipboard.ts",
+    "frontend/src/lib/contactValidation.ts",
+    "frontend/src/lib/fitnessCalculators.ts",
+    "frontend/src/lib/useDocumentTitle.ts",
+    "frontend/src/main.tsx",
+    "frontend/src/pages/About.tsx",
+    "frontend/src/pages/Contact.tsx",
+    "frontend/src/pages/Home.tsx",
+    "frontend/src/pages/Tools.tsx",
+    "frontend/tailwind.config.js",
+    "project_state.json"
+  ]
+}

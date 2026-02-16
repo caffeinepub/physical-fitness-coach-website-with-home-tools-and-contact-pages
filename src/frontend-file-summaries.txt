@@ -1,0 +1,17 @@
+{
+  "frontend/src/App.tsx": "Main application component that sets up TanStack Router with routes for Home, Tools, Contact, and About pages, all wrapped in the SiteLayout component.",
+  "frontend/src/components/SiteLayout.tsx": "Layout wrapper component that renders the HeaderNav, main content outlet, and Footer on every page.",
+  "frontend/src/components/HeaderNav.tsx": "Responsive site header with logo, navigation links, and mobile menu toggle that highlights the current active route.",
+  "frontend/src/components/Footer.tsx": "Site footer with branding, quick links, contact information, and attribution to caffeine.ai with proper UTM tracking.",
+  "frontend/src/pages/Home.tsx": "Home page featuring a hero section with CTA buttons, features/benefits grid, and a call-to-action section encouraging users to explore tools or contact.",
+  "frontend/src/pages/Tools.tsx": "Tools page with three interactive calculators: BMI calculator with unit selection, daily calorie estimator with activity levels, and a weekly workout planner with copy-to-clipboard functionality.",
+  "frontend/src/pages/Contact.tsx": "Contact page with a validated contact form that submits to the backend, displays success/error states, and shows contact information cards.",
+  "frontend/src/pages/About.tsx": "About page describing FitCoach's mission, core values, and service offerings with detailed sections for personal training, nutrition coaching, group classes, and online coaching.",
+  "frontend/src/hooks/useQueries.ts": "React Query hooks for backend interactions, including useSubmitInquiry mutation and useGetAllInquiries query with proper cache invalidation.",
+  "frontend/src/lib/useDocumentTitle.ts": "Custom React hook that sets the document title for each page.",
+  "frontend/src/lib/fitnessCalculators.ts": "Pure utility functions for BMI calculation with category labeling and TDEE (Total Daily Energy Expenditure) calculation using the Mifflin-St Jeor equation with activity multipliers.",
+  "frontend/src/lib/clipboard.ts": "Helper function to copy text to clipboard using the Clipboard API with error handling.",
+  "frontend/src/lib/contactValidation.ts": "Client-side validation function for the contact form that checks required fields, email format, and minimum message length.",
+  "frontend/src/index.css": "Global styles with OKLCH color system using an energetic orange/coral primary color (hue 25) instead of blue/purple, with proper light and dark mode support.",
+  "frontend/tailwind.config.js": "Tailwind configuration with custom color tokens, Inter font family, and extended theme settings for the fitness coaching brand."
+}

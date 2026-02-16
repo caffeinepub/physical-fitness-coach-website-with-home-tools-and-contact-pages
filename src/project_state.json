@@ -1,0 +1,95 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "Create a physical fitness/physical coach website with necessary tools and core pages (Home, Tools, Contact Us, etc.).",
+  "architectural_notes": [],
+  "known_issues": [],
+  "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- Fitness coaching logo mark, modern minimalist (coach-logo.dim_512x512.png)\n- High-energy fitness hero banner with abstract shapes and subtle texture, no text (fitness-hero-banner.dim_1600x900.png)\n- Set of 3 simple line icons: dumbbell, stopwatch, heart/health (fitness-icons-set.dim_512x512.png)",
+  "existing_features": [
+    {
+      "id": "feature-create-a-multi-page-frontend-for-a-physical-fitness-physical-coach-website-with-top-navigation-and-routes-for-home-tools-contact-us-and-at-least-one-additional-informational-page-e-g-about-or-services-all-pages-must-be-accessible-via-navigation-and-have-clear-page-headings-and-sections",
+      "title": "Create a multi-page frontend for a physical fitness / physical coach website with top navigation and routes for: Home, Tools, Contact Us, and at least one additional informational page (e.g., About or Services). All pages must be accessible via navigation and have clear page headings and sections.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-design-and-implement-a-coherent-visual-theme-for-the-full-website-colors-typography-spacing-buttons-cards-appropriate-for-a-fitness-coaching-brand-and-apply-it-consistently-across-all-pages-avoid-a-blue-purple-primary-palette-unless-explicitly-requested-later",
+      "title": "Design and implement a coherent visual theme for the full website (colors, typography, spacing, buttons, cards) appropriate for a fitness coaching brand, and apply it consistently across all pages. Avoid a blue/purple primary palette unless explicitly requested later.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-the-home-page-content-sections-suitable-for-a-fitness-coach-website-including-at-minimum-hero-section-headline-subtext-primary-call-to-action-coach-services-overview-highlights-benefits-section-and-a-call-to-action-linking-to-tools-and-contact-us",
+      "title": "Implement the Home page content sections suitable for a fitness coach website, including at minimum: hero section (headline + subtext + primary call-to-action), coach/services overview, highlights/benefits section, and a call-to-action linking to Tools and Contact Us.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-tools-page-that-provides-practical-fitness-tools-implemented-in-the-ui-no-external-integrations-required-include-at-least-bmi-calculator-height-weight-inputs-with-unit-selection-daily-calorie-estimate-calculator-basic-bmr-tdee-estimate-with-activity-level-and-a-simple-weekly-workout-planner-template-user-fills-days-exercises-and-can-export-copy",
+      "title": "Build a Tools page that provides practical fitness tools implemented in the UI (no external integrations required). Include at least: BMI calculator (height/weight inputs with unit selection), daily calorie estimate calculator (basic BMR/TDEE estimate with activity level), and a simple weekly workout planner template (user fills days/exercises and can export/copy).",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-contact-us-page-with-a-contact-form-name-email-message-including-client-side-validation-success-error-states-and-submission-to-the-backend-for-storage-also-display-basic-contact-information-blocks-e-g-email-phone-placeholders-and-optional-business-hours",
+      "title": "Create a Contact Us page with a contact form (name, email, message) including client-side validation, success/error states, and submission to the backend for storage. Also display basic contact information blocks (e.g., email/phone placeholders) and optional business hours.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-basic-footer-and-standard-site-layout-elements-header-nav-footer-reused-across-pages-including-links-to-home-tools-contact-us-and-the-additional-informational-page",
+      "title": "Add a basic footer and standard site layout elements (header/nav + footer) reused across pages, including links to Home, Tools, Contact Us, and the additional informational page.",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-lightweight-on-site-seo-accessibility-baseline-set-meaningful-page-titles-per-route-ensure-form-inputs-have-labels-and-ensure-main-sections-use-semantic-headings",
+      "title": "Add a lightweight on-site SEO/accessibility baseline: set meaningful page titles per route, ensure form inputs have labels, and ensure main sections use semantic headings.",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-generated-static-image-assets-to-support-the-fitness-coach-theme-and-render-them-in-the-ui-served-from-frontend-public-assets-generated-including-a-logo-and-a-home-hero-banner-image",
+      "title": "Add generated static image assets to support the fitness coach theme and render them in the UI (served from frontend/public/assets/generated), including a logo and a home hero banner image.",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Create a physical fitness/physical coach website with core pages (Home, Tools, Contact Us, etc.).",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-7",
+      "summary": "Backend: implement data models and actor methods to store and retrieve Contact Us submissions. Each stored inquiry must include: id, name, email, message, and createdAt timestamp.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Physical Fitness / Coach Website with Home, Tools, and Contact Pages",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}
